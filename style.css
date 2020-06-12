@@ -6,20 +6,39 @@
     --black-color: #272727;
 }
 
+
 body {
     color: var(--black-color);
-    background-image: linear-gradient(-90deg, #e2f0be,#c5eaf1 );
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Manrope', sans-serif;
+    margin:0;
+    padding:5%;
 }
 
 .container {
     margin: 0 auto;
     width: 600px;
     font-weight: bold;
+    background-color:rgba(255,255,255,.8);
+    border-radius:.25em;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    padding:20px;
 }
+
+/*--- test ---*/
+
+/*--- end test ---*/
 
 h1 {
     text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin:0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .todo-component {
@@ -38,8 +57,11 @@ h1 {
     height: 32px;
     width: 100%;
     border: 3px solid var(--blue-color);;
-    border-radius: 5px;
-    box-shadow: 5px 5px 3px var(--black-color);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px;
+    line-height: normal;
+    padding: 6px;
 }
 
 .todo-component__control input:hover {
@@ -47,19 +69,23 @@ h1 {
   }
 
 .todo-component__control button {
-    height: 36px;
-    width: 64px;
+    
     background-color: var(--blue-color);
-    border-radius: 5px;
     color: var(--white-color);
     border: 1.5px solid var(--blue-color);
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 5px 5px 3px var(--black-color);
+
+    font-size: 20px;
+    height: 50px;
+    width: 65px;
+    cursor: pointer;
+    
+    border-left: none;
+    border-radius: 0 5px 5px 0;
 }
 
 .todo-component__control button:hover {
-    transform: rotateY(360deg);
     color: var(--blue-color);
     background-color: var(--white-color);
     border: 1.5px solid var(--blue-color);
@@ -76,34 +102,32 @@ h1 {
     width: 100%;
     height: 40px;
     background-color: #f1f3f4;
-    border: 2px solid grey;
+    border: 1px solid grey;
     border-radius: 5px;
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    box-shadow: 5px 5px 3px var(--black-color);
     transition: 0.2s;
 }
 
 .todolist__item:hover {
-    background: rgb(213, 237, 252);
-    height: 42px;
-    width: 101%;
+    background: rgb(185, 228, 255);
   }
 
 .todolist__item input[type='checkbox'], .todolist__item button {
-    margin: 0 10px;
-    color: var(--white-color);
-    background-color: var(--red-color);
-    border-radius: 25%;
-    border: 1px solid var(--white-color);
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--red-color);
+    background-color: inherit;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
+    height: 25px;
+    width: 25px;
 }
 
 .todolist__item button:hover {
-    transform: rotateZ(360deg);
-    border: 2px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .todolist__item span {
@@ -113,7 +137,6 @@ h1 {
 
 .complete {
     border: 3px solid var(--green-color);
-    box-shadow: 5px 5px 3px rgb(3, 66, 3);
 }
 
 .complete.todolist__item span {
@@ -127,10 +150,14 @@ h1 {
     padding: 0 10px;
 }
 
+#input-count, #total, #total-done {
+    font-size: 14px;
+}
+
 @media screen and (max-width: 1024px) {
     .container {
         margin: 0 auto;
-        width: 65%;
+        width: 80%;
     }
 }
   
@@ -138,5 +165,40 @@ h1 {
     .container {
         margin: 0 auto;
         width: 90%;
+    }
+    .todolist__item {
+        height: 30px;
+    }
+    
+}
+
+/*---Backgroung effect---*/ 
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #46d680 50%, #408ad3 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+  
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+  
+.bg3 {
+    animation-duration:5s;
+}
+
+@keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
     }
 }
