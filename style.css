@@ -25,10 +25,6 @@ body {
     padding:20px;
 }
 
-/*--- test ---*/
-
-/*--- end test ---*/
-
 h1 {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -75,12 +71,11 @@ hr {
     border: 1.5px solid var(--blue-color);
     cursor: pointer;
     transition: 0.5s;
-
+    text-align: center;
     font-size: 20px;
     height: 50px;
     width: 65px;
     cursor: pointer;
-    
     border-left: none;
     border-radius: 0 5px 5px 0;
 }
